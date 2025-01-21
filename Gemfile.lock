@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sevdesk_client (1.0.0)
+    sevdesk_client (0.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
