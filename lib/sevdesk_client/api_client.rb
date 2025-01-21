@@ -3,7 +3,6 @@ require 'openapi_client/api_client'
 # Common files
 require 'openapi_client/api_client'
 require 'openapi_client/api_error'
-require 'openapi_client/version'
 require 'openapi_client/configuration'
 
 # Models
