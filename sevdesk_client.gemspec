@@ -1,9 +1,9 @@
 $:.push File.expand_path("../lib", __FILE__)
-require_relative "lib/sevdesk_client/version"
+require "openapi_client/version"
 
 Gem::Specification.new do |s|
   s.name        = "sevdesk_client"
-  s.version     = SevdeskClient::VERSION
+  s.version     = OpenapiClient::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["OpenAPI-Generator", "Djamal Sadaghiani"]
   s.email       = ["djamal@dobbi.co"]

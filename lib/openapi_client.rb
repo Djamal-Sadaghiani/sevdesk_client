@@ -1,5 +1,3 @@
-# lib/sevdesk_client/api_client.rb
-require 'openapi_client/api_client'
 # Common files
 require 'openapi_client/api_client'
 require 'openapi_client/api_error'
@@ -405,9 +403,20 @@ require 'openapi_client/api/tag_api'
 require 'openapi_client/api/voucher_api'
 require 'openapi_client/api/voucher_pos_api'
 
-
-module SevdeskClient
-  class ApiClient < OpenapiClient::ApiClient
-    # You can override methods or add custom functionality here if needed
+module OpenapiClient
+  class << self
+    # Customize default settings for the SDK using block.
+    #   OpenapiClient.configure do |config|
+    #     config.username = "xxx"
+    #     config.password = "xxx"
+    #   end
+    # If no block given, return the default Configuration object.
+    def configure
+      if block_given?
+        yield(Configuration.default)
+      else
+        Configuration.default
+      end
+    end
   end
 end
