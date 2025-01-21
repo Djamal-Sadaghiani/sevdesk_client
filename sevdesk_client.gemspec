@@ -1,5 +1,4 @@
 $:.push File.expand_path("../lib", __FILE__)
-require "openapi_client/version"
 require_relative "lib/sevdesk_client/version"
 
 Gem::Specification.new do |s|
