@@ -13,6 +13,7 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'objects' => :'objects',
         :'invoice' => :'invoice',
         :'invoice_pos' => :'invoicePos',
         :'filename' => :'filename'
@@ -27,6 +28,7 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'objects' => :'ModelInvoiceResponse',
         :'invoice' => :'ModelInvoiceResponse',
         :'invoice_pos' => :'Array<ModelInvoicePosResponse>',
         :'filename' => :'File'
@@ -112,21 +114,32 @@ module OpenapiClient
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       attributes = attributes.transform_keys(&:to_sym)
-      transformed_hash = {}
-      openapi_types.each_pair do |key, type|
-        if attributes.key?(attribute_map[key]) && attributes[attribute_map[key]].nil?
-          transformed_hash["#{key}"] = nil
-        elsif type =~ /\AArray<(.*)>/i
-          # check to ensure the input is an array given that the attribute
-          # is documented as an array but the input is not
-          if attributes[attribute_map[key]].is_a?(Array)
-            transformed_hash["#{key}"] = attributes[attribute_map[key]].map { |v| _deserialize($1, v) }
+
+      # If we have an objects wrapper, use its contents
+      if attributes.key?(:objects)
+        obj = new
+        obj.objects = attributes[:objects]
+        # Copy the ID and other important fields from the nested object
+        obj.id = attributes[:objects][:id]
+        obj.object_name = attributes[:objects][:objectName]
+        # ... copy other fields as needed
+        obj
+      else
+        # Existing build_from_hash logic for direct attributes
+        transformed_hash = {}
+        openapi_types.each_pair do |key, type|
+          if attributes.key?(attribute_map[key]) && attributes[attribute_map[key]].nil?
+            transformed_hash["#{key}"] = nil
+          elsif type =~ /\AArray<(.*)>/i
+            if attributes[attribute_map[key]].is_a?(Array)
+              transformed_hash["#{key}"] = attributes[attribute_map[key]].map { |v| _deserialize($1, v) }
+            end
+          elsif !attributes[attribute_map[key]].nil?
+            transformed_hash["#{key}"] = _deserialize(type, attributes[attribute_map[key]])
           end
-        elsif !attributes[attribute_map[key]].nil?
-          transformed_hash["#{key}"] = _deserialize(type, attributes[attribute_map[key]])
         end
+        new(transformed_hash)
       end
-      new(transformed_hash)
     end
 
     # Deserializes the data based on type

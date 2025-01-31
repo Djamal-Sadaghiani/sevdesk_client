@@ -161,7 +161,7 @@ module OpenapiClient
       @key_file = nil
       @timeout = 0
       @params_encoding = nil
-      @debugging = false
+      @debugging = true
       @ignore_operation_servers = false
       @inject_format = false
       @force_ending_format = false
