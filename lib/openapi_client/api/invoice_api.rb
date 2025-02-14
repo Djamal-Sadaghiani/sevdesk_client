@@ -553,6 +553,8 @@ module OpenapiClient
         :return_type => return_type
       )
 
+      puts "query_params: #{query_params}"
+
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: InvoiceApi#get_invoices\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
@@ -624,7 +626,7 @@ module OpenapiClient
     end
 
     # Enshrine
-    # Sets the current date and time as a value for the property `enshrined`.<br> This operation is only possible if the status is \"Open\" (`\"status\": \"200\"`) or higher.  Enshrined invoices cannot be changed. This operation cannot be undone. 
+    # Sets the current date and time as a value for the property `enshrined`.<br> This operation is only possible if the status is \"Open\" (`\"status\": \"200\"`) or higher.  Enshrined invoices cannot be changed. This operation cannot be undone.
     # @param invoice_id [Integer] ID of the invoice to enshrine
     # @param [Hash] opts the optional parameters
     # @return [CheckAccountTransactionEnshrine200Response]
@@ -634,7 +636,7 @@ module OpenapiClient
     end
 
     # Enshrine
-    # Sets the current date and time as a value for the property &#x60;enshrined&#x60;.&lt;br&gt; This operation is only possible if the status is \&quot;Open\&quot; (&#x60;\&quot;status\&quot;: \&quot;200\&quot;&#x60;) or higher.  Enshrined invoices cannot be changed. This operation cannot be undone. 
+    # Sets the current date and time as a value for the property &#x60;enshrined&#x60;.&lt;br&gt; This operation is only possible if the status is \&quot;Open\&quot; (&#x60;\&quot;status\&quot;: \&quot;200\&quot;&#x60;) or higher.  Enshrined invoices cannot be changed. This operation cannot be undone.
     # @param invoice_id [Integer] ID of the invoice to enshrine
     # @param [Hash] opts the optional parameters
     # @return [Array<(CheckAccountTransactionEnshrine200Response, Integer, Hash)>] CheckAccountTransactionEnshrine200Response data, response status code and response headers
@@ -889,7 +891,7 @@ module OpenapiClient
     end
 
     # Reset status to draft
-    # Resets the status to \"Draft\" (`\"status\": \"100\"`).<br> This is only possible if the invoice has the status \"Open\" (`\"status\": \"200\"`).<br> If it has a higher status use [Invoice/{invoiceId}/resetToOpen](#tag/Invoice/operation/invoiceResetToOpen) first.  This endpoint cannot be used for recurring invoices (`\"invoiceType\": \"WKR\"`).<br> Use [Invoice/Factory/saveInvoice](#tag/Invoice/operation/createInvoiceByFactory) instead. 
+    # Resets the status to \"Draft\" (`\"status\": \"100\"`).<br> This is only possible if the invoice has the status \"Open\" (`\"status\": \"200\"`).<br> If it has a higher status use [Invoice/{invoiceId}/resetToOpen](#tag/Invoice/operation/invoiceResetToOpen) first.  This endpoint cannot be used for recurring invoices (`\"invoiceType\": \"WKR\"`).<br> Use [Invoice/Factory/saveInvoice](#tag/Invoice/operation/createInvoiceByFactory) instead.
     # @param invoice_id [Integer] ID of the invoice to reset
     # @param [Hash] opts the optional parameters
     # @return [InvoiceResetToDraft200Response]
@@ -899,7 +901,7 @@ module OpenapiClient
     end
 
     # Reset status to draft
-    # Resets the status to \&quot;Draft\&quot; (&#x60;\&quot;status\&quot;: \&quot;100\&quot;&#x60;).&lt;br&gt; This is only possible if the invoice has the status \&quot;Open\&quot; (&#x60;\&quot;status\&quot;: \&quot;200\&quot;&#x60;).&lt;br&gt; If it has a higher status use [Invoice/{invoiceId}/resetToOpen](#tag/Invoice/operation/invoiceResetToOpen) first.  This endpoint cannot be used for recurring invoices (&#x60;\&quot;invoiceType\&quot;: \&quot;WKR\&quot;&#x60;).&lt;br&gt; Use [Invoice/Factory/saveInvoice](#tag/Invoice/operation/createInvoiceByFactory) instead. 
+    # Resets the status to \&quot;Draft\&quot; (&#x60;\&quot;status\&quot;: \&quot;100\&quot;&#x60;).&lt;br&gt; This is only possible if the invoice has the status \&quot;Open\&quot; (&#x60;\&quot;status\&quot;: \&quot;200\&quot;&#x60;).&lt;br&gt; If it has a higher status use [Invoice/{invoiceId}/resetToOpen](#tag/Invoice/operation/invoiceResetToOpen) first.  This endpoint cannot be used for recurring invoices (&#x60;\&quot;invoiceType\&quot;: \&quot;WKR\&quot;&#x60;).&lt;br&gt; Use [Invoice/Factory/saveInvoice](#tag/Invoice/operation/createInvoiceByFactory) instead.
     # @param invoice_id [Integer] ID of the invoice to reset
     # @param [Hash] opts the optional parameters
     # @return [Array<(InvoiceResetToDraft200Response, Integer, Hash)>] InvoiceResetToDraft200Response data, response status code and response headers
@@ -952,7 +954,7 @@ module OpenapiClient
     end
 
     # Reset status to open
-    # Resets the status \"Open\" (`\"status\": \"200\"`). Linked transactions will be unlinked.<br> This is not possible if the invoice itself or one of its transactions (CheckAccountTransaction) is already enshrined.  This endpoint cannot be used to increase the status to \"Open\" (`\"status\": \"200\"`).<br> Use [Invoice/{invoiceId}/sendBy](#tag/Invoice/operation/invoiceSendBy) / [Invoice/{invoiceId}/sendViaEmail](#tag/Invoice/operation/sendInvoiceViaEMail) instead.  This endpoint cannot be used for recurring invoices (`\"invoiceType\": \"WKR\"`). Use [Invoice/Factory/saveInvoice](#tag/Invoice/operation/createInvoiceByFactory) instead. 
+    # Resets the status \"Open\" (`\"status\": \"200\"`). Linked transactions will be unlinked.<br> This is not possible if the invoice itself or one of its transactions (CheckAccountTransaction) is already enshrined.  This endpoint cannot be used to increase the status to \"Open\" (`\"status\": \"200\"`).<br> Use [Invoice/{invoiceId}/sendBy](#tag/Invoice/operation/invoiceSendBy) / [Invoice/{invoiceId}/sendViaEmail](#tag/Invoice/operation/sendInvoiceViaEMail) instead.  This endpoint cannot be used for recurring invoices (`\"invoiceType\": \"WKR\"`). Use [Invoice/Factory/saveInvoice](#tag/Invoice/operation/createInvoiceByFactory) instead.
     # @param invoice_id [Integer] ID of the invoice to reset
     # @param [Hash] opts the optional parameters
     # @return [InvoiceResetToOpen200Response]
@@ -962,7 +964,7 @@ module OpenapiClient
     end
 
     # Reset status to open
-    # Resets the status \&quot;Open\&quot; (&#x60;\&quot;status\&quot;: \&quot;200\&quot;&#x60;). Linked transactions will be unlinked.&lt;br&gt; This is not possible if the invoice itself or one of its transactions (CheckAccountTransaction) is already enshrined.  This endpoint cannot be used to increase the status to \&quot;Open\&quot; (&#x60;\&quot;status\&quot;: \&quot;200\&quot;&#x60;).&lt;br&gt; Use [Invoice/{invoiceId}/sendBy](#tag/Invoice/operation/invoiceSendBy) / [Invoice/{invoiceId}/sendViaEmail](#tag/Invoice/operation/sendInvoiceViaEMail) instead.  This endpoint cannot be used for recurring invoices (&#x60;\&quot;invoiceType\&quot;: \&quot;WKR\&quot;&#x60;). Use [Invoice/Factory/saveInvoice](#tag/Invoice/operation/createInvoiceByFactory) instead. 
+    # Resets the status \&quot;Open\&quot; (&#x60;\&quot;status\&quot;: \&quot;200\&quot;&#x60;). Linked transactions will be unlinked.&lt;br&gt; This is not possible if the invoice itself or one of its transactions (CheckAccountTransaction) is already enshrined.  This endpoint cannot be used to increase the status to \&quot;Open\&quot; (&#x60;\&quot;status\&quot;: \&quot;200\&quot;&#x60;).&lt;br&gt; Use [Invoice/{invoiceId}/sendBy](#tag/Invoice/operation/invoiceSendBy) / [Invoice/{invoiceId}/sendViaEmail](#tag/Invoice/operation/sendInvoiceViaEMail) instead.  This endpoint cannot be used for recurring invoices (&#x60;\&quot;invoiceType\&quot;: \&quot;WKR\&quot;&#x60;). Use [Invoice/Factory/saveInvoice](#tag/Invoice/operation/createInvoiceByFactory) instead.
     # @param invoice_id [Integer] ID of the invoice to reset
     # @param [Hash] opts the optional parameters
     # @return [Array<(InvoiceResetToOpen200Response, Integer, Hash)>] InvoiceResetToOpen200Response data, response status code and response headers
