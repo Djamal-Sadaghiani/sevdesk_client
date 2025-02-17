@@ -644,8 +644,9 @@ module OpenapiClient
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] send_type Object to be assigned
+    # added "0" to the list of allowable values to not fail for draft invoices
     def send_type=(send_type)
-      validator = EnumAttributeValidator.new('String', ["VPR", "VPDF", "VM", "VP"])
+      validator = EnumAttributeValidator.new('String', ["VPR", "VPDF", "VM", "VP", "0"])
       unless validator.valid?(send_type)
         fail ArgumentError, "invalid value for \"send_type\", must be one of #{validator.allowable_values}."
       end
