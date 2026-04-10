@@ -108,8 +108,7 @@ module OpenapiClient
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @id.nil?
-      id_validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "11", "17"])
-      return false unless id_validator.valid?(@id)
+      return false if @id.to_s.empty?
       return false if @object_name.nil?
       object_name_validator = EnumAttributeValidator.new('String', ["TaxRule"])
       return false unless object_name_validator.valid?(@object_name)
@@ -119,10 +118,6 @@ module OpenapiClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] id Object to be assigned
     def id=(id)
-      validator = EnumAttributeValidator.new('String', ["1", "2", "3", "4", "5", "11", "17"])
-      unless validator.valid?(id)
-        fail ArgumentError, "invalid value for \"id\", must be one of #{validator.allowable_values}."
-      end
       @id = id
     end
 
