@@ -124,12 +124,8 @@ describe OpenapiClient::ModelInvoiceResponse do
   end
 
   describe 'test attribute "status"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["50", "100", "200", "750", "1000"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.status = value }.not_to raise_error
-      # end
+    it 'accepts the overdue reminder status returned by sevdesk' do
+      expect { instance.status = '500' }.not_to raise_error
     end
   end
 
@@ -164,8 +160,10 @@ describe OpenapiClient::ModelInvoiceResponse do
   end
 
   describe 'test attribute "dunning_level"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    it 'deserializes the reminder count as an integer' do
+      response = described_class.build_from_hash(dunningLevel: 3)
+
+      expect(response.dunning_level).to eq(3)
     end
   end
 

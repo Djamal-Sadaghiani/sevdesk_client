@@ -28,7 +28,7 @@
 | **tax_rate** | **String** | This is not used anymore. Use the taxRate of the individual positions instead. | [optional][readonly] |
 | **tax_rule** | [**ModelInvoiceResponseTaxRule**](ModelInvoiceResponseTaxRule.md) |  | [optional] |
 | **tax_text** | **String** | A common tax text would be &#39;Umsatzsteuer 19%&#39; | [optional][readonly] |
-| **dunning_level** | **String** | Defines how many reminders have already been sent for the invoice.      Starts with 1 (Payment reminder) and should be incremented by one every time another reminder is sent. | [optional][readonly] |
+| **dunning_level** | **Integer** | Defines how many reminders have already been sent for the invoice.      Starts with 1 (Payment reminder) and should be incremented by one every time another reminder is sent. | [optional][readonly] |
 | **tax_type** | **String** | **Use this in sevdesk-Update 1.0 (instead of taxRule).**  Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG Tax rates are heavily connected to the tax type used. | [optional][readonly] |
 | **payment_method** | [**ModelInvoiceResponsePaymentMethod**](ModelInvoiceResponsePaymentMethod.md) |  | [optional] |
 | **cost_centre** | [**ModelInvoiceResponseCostCentre**](ModelInvoiceResponseCostCentre.md) |  | [optional] |
@@ -133,4 +133,3 @@ postCode city,
   send_payment_received_notification_date: 0
 )
 ```
-

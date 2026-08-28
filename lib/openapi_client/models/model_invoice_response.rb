@@ -293,7 +293,7 @@ module OpenapiClient
         :'tax_rate' => :'String',
         :'tax_rule' => :'ModelInvoiceResponseTaxRule',
         :'tax_text' => :'String',
-        :'dunning_level' => :'String',
+        :'dunning_level' => :'Integer',
         :'tax_type' => :'String',
         :'payment_method' => :'ModelInvoiceResponsePaymentMethod',
         :'cost_centre' => :'ModelInvoiceResponseCostCentre',
@@ -601,7 +601,7 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      status_validator = EnumAttributeValidator.new('String', ["50", "100", "200", "750", "1000"])
+      status_validator = EnumAttributeValidator.new('String', ["50", "100", "200", "500", "750", "1000"])
       return false unless status_validator.valid?(@status)
       tax_type_validator = EnumAttributeValidator.new('String', ["default", "eu", "noteu", "custom"])
       return false unless tax_type_validator.valid?(@tax_type)
@@ -615,7 +615,7 @@ module OpenapiClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["50", "100", "200", "750", "1000"])
+      validator = EnumAttributeValidator.new('String', ["50", "100", "200", "500", "750", "1000"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
