@@ -52,8 +52,10 @@ describe OpenapiClient::ModelInvoicePosResponse do
   end
 
   describe 'test attribute "quantity"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    it 'deserializes the numeric string returned by sevDesk' do
+      response = described_class.build_from_hash(quantity: '2')
+
+      expect(response.quantity).to eq('2')
     end
   end
 

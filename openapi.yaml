@@ -11966,6 +11966,7 @@ components:
             - '50'
             - '100'
             - '200'
+            - '500'
             - '750'
             - '1000'
           example: '100'
@@ -12045,7 +12046,7 @@ components:
           readOnly: true
         dunningLevel:
           description: "Defines how many reminders have already been sent for the invoice.\r\n    Starts with 1 (Payment reminder) and should be incremented by one every time another reminder is sent."
-          type: string
+          type: integer
           example: '0'
           readOnly: true
         taxType:
@@ -13147,8 +13148,8 @@ components:
           readOnly: true
         quantity:
           description: Quantity of the article/part
-          type: boolean
-          example: true
+          type: string
+          example: '1'
           readOnly: true
         price:
           description: >-
