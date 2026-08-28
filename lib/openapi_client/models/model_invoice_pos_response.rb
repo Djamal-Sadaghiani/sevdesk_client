@@ -108,7 +108,7 @@ module OpenapiClient
         :'update' => :'Time',
         :'invoice' => :'ModelInvoicePosResponseInvoice',
         :'part' => :'ModelInvoicePosResponsePart',
-        :'quantity' => :'Boolean',
+        :'quantity' => :'String',
         :'price' => :'String',
         :'name' => :'String',
         :'unity' => :'ModelInvoicePosResponseUnity',

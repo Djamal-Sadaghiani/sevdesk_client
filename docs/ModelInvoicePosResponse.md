@@ -10,7 +10,7 @@
 | **update** | **Time** | Date of last invoice position update | [optional][readonly] |
 | **invoice** | [**ModelInvoicePosResponseInvoice**](ModelInvoicePosResponseInvoice.md) |  | [optional] |
 | **part** | [**ModelInvoicePosResponsePart**](ModelInvoicePosResponsePart.md) |  | [optional] |
-| **quantity** | **Boolean** | Quantity of the article/part | [optional][readonly] |
+| **quantity** | **String** | Quantity of the article/part | [optional][readonly] |
 | **price** | **String** | Price of the article/part. Is either gross or net, depending on the sevdesk account setting. | [optional][readonly] |
 | **name** | **String** | Name of the article/part. | [optional][readonly] |
 | **unity** | [**ModelInvoicePosResponseUnity**](ModelInvoicePosResponseUnity.md) |  | [optional] |

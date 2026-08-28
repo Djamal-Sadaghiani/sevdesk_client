@@ -13147,8 +13147,8 @@ components:
           readOnly: true
         quantity:
           description: Quantity of the article/part
-          type: boolean
-          example: true
+          type: string
+          example: '1'
           readOnly: true
         price:
           description: >-
