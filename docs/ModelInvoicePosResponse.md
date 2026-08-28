@@ -39,7 +39,7 @@ instance = OpenapiClient::ModelInvoicePosResponse.new(
   update: null,
   invoice: null,
   part: null,
-  quantity: true,
+  quantity: '2',
   price: 100,
   name: Dragonglass,
   unity: null,
